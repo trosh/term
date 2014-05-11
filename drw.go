@@ -19,8 +19,8 @@ type scr struct {
 
 func (s scr) Size() pxl {
 	size := pxl{s.p2.x - s.p1.x, s.p2.y - s.p1.x}
-	if s.p2.x < s.p1.x { size.x = s.p1.x - s.p2.x }
-	if s.p2.y < s.p1.y { size.y = s.p1.y - s.p2.y }
+	if s.p2.x < s.p1.x { size.x = size.x }
+	if s.p2.y < s.p1.y { size.y = size.y }
 	return size
 }
 
@@ -89,13 +89,13 @@ func Triangle(center pxl, radius float64, angle float64) (pxl, pxl, pxl) {
 	angle3 := angle + 4 * math.Pi / 3
 	p1 := pxl{
 		int(math.Sin(angle)*radius * 1.7) + center.x,
-		int(math.Cos(angle)*radius) + center.y}
+		int(math.Cos(angle)*radius      ) + center.y}
 	p2 := pxl{
 		int(math.Sin(angle2)*radius * 1.7) + center.x,
-		int(math.Cos(angle2)*radius) + center.y}
+		int(math.Cos(angle2)*radius      ) + center.y}
 	p3 := pxl{
 		int(math.Sin(angle3)*radius * 1.7) + center.x,
-		int(math.Cos(angle3)*radius) + center.y}
+		int(math.Cos(angle3)*radius      ) + center.y}
 	return p1, p2, p3
 }
 
