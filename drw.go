@@ -2,7 +2,6 @@ package term
 
 import (
 	"fmt"
-	"math"
 )
 
 type Pxl struct {
