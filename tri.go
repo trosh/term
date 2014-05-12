@@ -7,7 +7,11 @@ import (
 	"github.com/trosh/term-go/term"
 )
 
-func Triangle(center pxl, radius float64, angle float64) (pxl, pxl, pxl) {
+func Triangle(center pxl,
+              radius float64,
+              angle  float64) (pxl,
+                               pxl,
+                               pxl) {
 	angle2 := angle + 2 * math.Pi / 3
 	angle3 := angle + 4 * math.Pi / 3
 	p1 := pxl{
